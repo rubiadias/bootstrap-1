@@ -1,4 +1,4 @@
-xdescribe("alert", function () {
+describe("alert", function () {
   var scope, ctrl, model, $compile;
   var element;
 
@@ -49,9 +49,9 @@ xdescribe("alert", function () {
   });
 
   it('it should be possible to add additional classes for alert', function () {
-    var element = $compile('<alert class="alert-block"></alert>')(scope);
+    var element = $compile('<alert class="alert-block">Default alert!</alert>')(scope);
     scope.$digest();
-    expect(element.find('div.alert').eq(0)).toHaveClass('alert-block');
+    expect(element).toHaveClass('alert-block');
   });
 
   it("should fire callback when closed", function () {
